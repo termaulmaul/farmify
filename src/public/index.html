@@ -1,0 +1,38 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmify Dashboard</title>
+  <script>
+    async function fetchSoilData() {
+      try {
+        const response = await fetch('/api/soil');  // Akses endpoint API
+        const data = await response.json();
+
+        // Jika data berhasil diterima, tampilkan pada halaman
+        if (data.soilValue !== undefined && data.status !== undefined) {
+          document.getElementById('soilValue').textContent = data.soilValue;
+          document.getElementById('status').textContent = data.status;
+        } else {
+          console.error('Invalid data received');
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);  // Tangani error jika request gagal
+      }
+    }
+
+    // Update setiap 2 detik
+    setInterval(fetchSoilData, 2000); // Update every 2 seconds
+  </script>
+</head>
+<body>
+  <h1>Farmify Dashboard</h1>
+  <div>
+    <p>Soil Value: <span id="soilValue">Loading...</span></p>
+    <p>Status: <span id="status">Loading...</span></p>
+  </div>
+</body>
+</html>

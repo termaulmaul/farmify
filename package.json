@@ -1,0 +1,26 @@
+{
+  "name": "farmify-dashboard",
+  "version": "1.0.0",
+  "description": "Farmify adalah sebuah aplikasi web untuk memantau kondisi tanah di sawah dengan menggunakan sensor tanah (soil sensor). Aplikasi ini menggunakan ESP32 untuk membaca nilai dari sensor tanah dan menampilkan status tanah di dashboard yang dapat diakses melalui web. Dashboard ini berguna untuk memonitor status kelembaban tanah secara real-time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/termaulmaul/farmify-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/termaulmaul/farmify-dashboard/issues"
+  },
+  "homepage": "https://github.com/termaulmaul/farmify-dashboard#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
